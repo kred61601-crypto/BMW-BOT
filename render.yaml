@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: knight-bot-pair-engine
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    disk:
+      name: knight-bot-data
+      mountPath: /opt/render/project/src/sessions
+      sizeGB: 1
